@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "501990712568",
+    "project_id": "moviereview-28250",
+    "storage_bucket": "moviereview-28250.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:501990712568:android:49482a9aea40084389c70d",
+        "android_client_info": {
+          "package_name": "com.example.movie_review_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "501990712568-aaaotrh1rucik3lhhd58ujruil5qqpc0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBm9_5frjclV16YdVVpRN5bvgayPccWLTw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "501990712568-aaaotrh1rucik3lhhd58ujruil5qqpc0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
