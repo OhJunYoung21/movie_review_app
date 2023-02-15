@@ -3,6 +3,7 @@ package com.example.movie_review_app
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import com.example.movie_review_app.databinding.ActivityLoginBinding
 import com.google.android.gms.tasks.Task
@@ -51,6 +52,7 @@ class LoginActivity : AppCompatActivity() {
 
             } else {
                 Toast.makeText(this, "로그인 실패", Toast.LENGTH_SHORT).show()
+                Log.d("signin", "error:${task.exception}")
             }
 
         }
