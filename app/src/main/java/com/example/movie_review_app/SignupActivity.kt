@@ -8,8 +8,6 @@ import android.widget.Toast
 import com.example.movie_review_app.databinding.ActivitySignupBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.ktx.Firebase
 
 class SignupActivity : AppCompatActivity() {
 
@@ -55,7 +53,7 @@ class SignupActivity : AppCompatActivity() {
     }
 
     private fun addUsertoDatabase(name: String, email: String, uid: String) {
-        mDbRef.child("user").child(uid).setValue(User(name, email, uid))
+        mDbRef.child("user").child(uid).setValue(User(name, email, uid))     //child 메소드로 mDbRef의 uid에 접근하여 User의 프로퍼티를 저장한다.
     }
 
 
