@@ -8,21 +8,23 @@ import android.widget.Toast
 import com.example.movie_review_app.databinding.ActivityLoginBinding
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
 
 class LoginActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityLoginBinding
+    lateinit var binding: ActivityLoginBinding
 
     lateinit var mAuth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
+        binding = ActivityLoginBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val view = binding.root
-
-        setContentView(view)
+        mAuth = Firebase.auth
 
         binding.Signin.setOnClickListener {
 

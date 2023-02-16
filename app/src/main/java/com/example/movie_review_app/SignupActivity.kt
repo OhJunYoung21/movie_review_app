@@ -5,13 +5,16 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import com.example.movie_review_app.databinding.ActivityLoginBinding
 import com.example.movie_review_app.databinding.ActivitySignupBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DatabaseReference
+import com.google.firebase.ktx.Firebase
 
 class SignupActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivitySignupBinding
+    lateinit var binding: ActivitySignupBinding
 
     lateinit var mAuth: FirebaseAuth
 
@@ -19,8 +22,10 @@ class SignupActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        binding = ActivitySignupBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        mAuth = Firebase.auth
 
         binding.complete.setOnClickListener {
 
