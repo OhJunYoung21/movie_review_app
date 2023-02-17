@@ -64,7 +64,7 @@
                 tools:ignore="HardcodedText" />
 
             <EditText
-                android:id="@+id/email"
+                android:id="@+id/email_signup"
                 android:layout_width="40dp"
                 android:layout_height="match_parent"
                 android:layout_marginEnd="40dp"

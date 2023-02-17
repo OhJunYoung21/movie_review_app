@@ -5,11 +5,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
-import com.example.movie_review_app.databinding.ActivityLoginBinding
 import com.example.movie_review_app.databinding.ActivitySignupBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 
 class SignupActivity : AppCompatActivity() {
@@ -27,12 +27,15 @@ class SignupActivity : AppCompatActivity() {
 
         mAuth = Firebase.auth
 
+        mDbRef  = Firebase.database.reference
+
         binding.complete.setOnClickListener {
 
             val name = binding.name.text.toString().trim()
-            val email = binding.email.text.toString().trim()
+            val email = binding.emailSignup.text.toString().trim()
             val password = binding.passwordSignup.text.toString().trim()
 
+            signUp(name, email,password)
 
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
@@ -44,9 +47,11 @@ class SignupActivity : AppCompatActivity() {
 
         mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener { task ->
             if (task.isSuccessful) {
-                Toast.makeText(this, "회원가입 성공", Toast.LENGTH_SHORT).show()
-                startActivity(Intent(this, LoginActivity::class.java))
                 addUsertoDatabase(name, email, mAuth.currentUser?.uid!!)
+                Toast.makeText(this, "회원가입 성공", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, LoginActivity::class.java)
+                startActivity(intent)
+
 
             } else {
                 Toast.makeText(this, "회원가입 실패", Toast.LENGTH_SHORT).show()
@@ -58,7 +63,8 @@ class SignupActivity : AppCompatActivity() {
     }
 
     private fun addUsertoDatabase(name: String, email: String, uid: String) {
-        mDbRef.child("user").child(uid).setValue(User(name, email, uid))     //child 메소드로 mDbRef의 uid에 접근하여 User의 프로퍼티를 저장한다.
+        mDbRef.child("user").child(uid)
+            .setValue(User(name, email, uid))     //child 메소드로 mDbRef의 uid에 접근하여 User의 프로퍼티를 저장한다.
     }
 
 
