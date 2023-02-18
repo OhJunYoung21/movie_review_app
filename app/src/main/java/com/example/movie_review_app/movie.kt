@@ -1,5 +1,4 @@
 package com.example.movie_review_app
 
-data class movie(val name: String) {
-
+class movie(val name:String, val actor: String) {
 }
