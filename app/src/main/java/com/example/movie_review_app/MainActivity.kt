@@ -22,8 +22,18 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
 
-        list.add(movie("iron man2", "Robert Downey.jr"))
-        list.add(movie("iron man3", "Robert Downey.jr"))
+        list.add(movie("Matrix", "Keeanu Reeves"))
+        list.add(movie("iron man", "Robert Downey.jr"))
+        list.add(movie("Transformer", "Shya Rabof"))
+        list.add(movie("At the world's end", "Jonny Depp"))
+        list.add(movie("Avengers", "Scarlett johanson"))
+        list.add(movie("Doctor Strange", "Benedict Cumberbatch"))
+        list.add(movie("Aquaman", "Jason Momoa"))
+        list.add(movie("At the world's end", "Jonny Depp"))
+        list.add(movie("Matrix", "Keeanu Reeves"))
+        list.add(movie("iron man", "Robert Downey.jr"))
+        list.add(movie("Transformer", "Shya Rabof"))
+        list.add(movie("At the world's end", "Jonny Depp"))
 
         binding.rvlist.adapter = Adapter
         binding.rvlist.layoutManager =
