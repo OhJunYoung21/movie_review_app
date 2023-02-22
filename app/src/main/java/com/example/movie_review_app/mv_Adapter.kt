@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 
 class mv_Adapter(val itemlist: ArrayList<movie>) :
@@ -27,6 +28,15 @@ class mv_Adapter(val itemlist: ArrayList<movie>) :
 
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+
+        init {
+            view.setOnClickListener {
+                val pos = adapterPosition
+                if (pos != RecyclerView.NO_POSITION){
+                    val item = itemlist.get(pos)
+                }
+            }
+        }
 
         val movie_name = view.findViewById<TextView>(R.id.tv_name)
         val movie_actor = view.findViewById<TextView>(R.id.tv_number)
