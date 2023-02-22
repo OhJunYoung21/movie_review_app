@@ -28,18 +28,6 @@ class MainActivity : AppCompatActivity() {
 
         list.add(movie("Matrix", "Keeanu"))
         list.add(movie("iron man", "Robert Downey.jr"))
-        list.add(movie("Matrix", "Keeanu"))
-        list.add(movie("iron man", "Robert Downey.jr"))
-        list.add(movie("Matrix", "Keeanu"))
-        list.add(movie("iron man", "Robert Downey.jr"))
-        list.add(movie("Matrix", "Keeanu"))
-        list.add(movie("iron man", "Robert Downey.jr"))
-        list.add(movie("Matrix", "Keeanu"))
-        list.add(movie("iron man", "Robert Downey.jr"))
-        list.add(movie("Matrix", "Keeanu"))
-        list.add(movie("iron man", "Robert Downey.jr"))
-        list.add(movie("Matrix", "Keeanu"))
-        list.add(movie("iron man", "Robert Downey.jr"))
 
 
         binding.rvlist.adapter = Movie_Adapter

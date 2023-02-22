@@ -10,6 +10,10 @@ import androidx.recyclerview.widget.RecyclerView
 class mv_Adapter(val itemlist: ArrayList<movie>) :
     RecyclerView.Adapter<mv_Adapter.ViewHolder>() {
 
+    interface OnItemClickListener {
+        fun OnClick(view: View, position: Int)
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.movie, parent, false)
         return ViewHolder(view)
@@ -31,7 +35,7 @@ class mv_Adapter(val itemlist: ArrayList<movie>) :
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
         val movie_name = view.findViewById<TextView>(R.id.tv_name)
-        val movie_actor = view.findViewById<TextView>(R.id.tv_number)
+        val movie_actor = view.findViewById<TextView>(R.id.tv_actor)
 
     }
 }
