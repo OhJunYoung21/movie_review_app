@@ -47,10 +47,11 @@ class LoginActivity : AppCompatActivity() {
     private fun login(email: String, password: String) {
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this) { task ->
             if (task.isSuccessful) {
-                Toast.makeText(this, "로그인 성공", Toast.LENGTH_SHORT).show()
+
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
                 finish()
+                Toast.makeText(this, "로그인 성공", Toast.LENGTH_SHORT).show()
 
             } else {
                 Toast.makeText(this, "로그인 실패", Toast.LENGTH_SHORT).show()

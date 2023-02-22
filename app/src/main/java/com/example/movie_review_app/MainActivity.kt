@@ -18,23 +18,35 @@ class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
 
     var list = arrayListOf<movie>()
-    val Adapter = mv_Adapter(list)
+    private val Movie_Adapter = mv_Adapter(list)
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         list.add(movie("Matrix", "Keeanu"))
         list.add(movie("iron man", "Robert Downey.jr"))
-        list.add(movie("Transformer", "Shya"))
-        list.add(movie("At the world's end", "Jonny Depp"))
-        list.add(movie("Avengers", "Scarlett"))
+        list.add(movie("Matrix", "Keeanu"))
+        list.add(movie("iron man", "Robert Downey.jr"))
+        list.add(movie("Matrix", "Keeanu"))
+        list.add(movie("iron man", "Robert Downey.jr"))
+        list.add(movie("Matrix", "Keeanu"))
+        list.add(movie("iron man", "Robert Downey.jr"))
+        list.add(movie("Matrix", "Keeanu"))
+        list.add(movie("iron man", "Robert Downey.jr"))
+        list.add(movie("Matrix", "Keeanu"))
+        list.add(movie("iron man", "Robert Downey.jr"))
+        list.add(movie("Matrix", "Keeanu"))
+        list.add(movie("iron man", "Robert Downey.jr"))
 
-        binding.rvlist.adapter = Adapter
+
+        binding.rvlist.adapter = Movie_Adapter
         binding.rvlist.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 
-
     }
+
+
 }
