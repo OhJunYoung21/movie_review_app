@@ -20,7 +20,9 @@ class mv_Adapter(val itemlist: ArrayList<movie>) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.movie_name.text = itemlist[position].name
         holder.movie_actor.text = itemlist[position].actor
+
     }
+
 
     override fun getItemCount(): Int {
         return itemlist.size
@@ -28,15 +30,6 @@ class mv_Adapter(val itemlist: ArrayList<movie>) :
 
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-
-        init {
-            view.setOnClickListener {
-                val pos = adapterPosition
-                if (pos != RecyclerView.NO_POSITION){
-                    val item = itemlist.get(pos)
-                }
-            }
-        }
 
         val movie_name = view.findViewById<TextView>(R.id.tv_name)
         val movie_actor = view.findViewById<TextView>(R.id.tv_number)
