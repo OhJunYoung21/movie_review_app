@@ -3,9 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_margin="5dp"
     app:cardBackgroundColor="#81C784"
-    app:cardCornerRadius="10dp"
-    android:layout_margin="5dp">
+    app:cardCornerRadius="10dp">
 
 
     <LinearLayout
@@ -16,12 +16,21 @@
 
 
         <TextView
+            android:id="@+id/order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="40dp"
+            android:fontFamily="@font/bm"
+            android:text="order" />
+
+        <TextView
             android:id="@+id/tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
             android:layout_weight="1"
+            android:fontFamily="@font/bm"
             android:text="name"
-
             tools:ignore="HardcodedText" />
 
 
@@ -29,17 +38,28 @@
             android:id="@+id/tv_actor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
             android:layout_weight="1"
+            android:fontFamily="@font/bm"
             android:text="name"
-
             tools:ignore="HardcodedText" />
 
         <Button
             android:id="@+id/deletion"
-            android:layout_width="5dp"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:fontFamily="@font/bm"
             android:text="delete"
+            android:textSize="9sp"
+            tools:ignore="HardcodedText,SmallSp" />
+
+        <Button
+            android:layout_marginStart="3dp"
+            android:id="@+id/review"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bm"
+            android:text="review"
             android:textSize="9sp"
             tools:ignore="HardcodedText,SmallSp" />
 
