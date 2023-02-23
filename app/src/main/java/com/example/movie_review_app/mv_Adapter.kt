@@ -1,18 +1,18 @@
 package com.example.movie_review_app
 
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+
 
 class mv_Adapter(val itemlist: ArrayList<movie>) :
     RecyclerView.Adapter<mv_Adapter.ViewHolder>() {
 
-    interface OnItemClickListener {
-        fun OnClick(view: View, position: Int)
-    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.movie, parent, false)
@@ -20,9 +20,16 @@ class mv_Adapter(val itemlist: ArrayList<movie>) :
     }
 
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.movie_name.text = itemlist[position].name
         holder.movie_actor.text = itemlist[position].actor
+
+        holder.movie_actor.setOnClickListener {
+            itemlist.removeAt(position)
+            notifyDataSetChanged()
+        }
+
 
     }
 

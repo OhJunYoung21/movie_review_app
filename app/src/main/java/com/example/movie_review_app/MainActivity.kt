@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
 
     var list = arrayListOf<movie>()
-    private val Movie_Adapter = mv_Adapter(list)
+    val Movie_Adapter = mv_Adapter(list)
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         list.add(movie("Matrix", "Keeanu"))
-        list.add(movie("iron man", "Robert Downey.jr"))
+        list.add(movie("iron man", "Robert"))
 
 
         binding.rvlist.adapter = Movie_Adapter
