@@ -25,7 +25,7 @@ class mv_Adapter(val itemlist: ArrayList<movie>) :
         holder.movie_name.text = itemlist[position].name
         holder.movie_actor.text = itemlist[position].actor
 
-        holder.movie_actor.setOnClickListener {
+        holder.delete.setOnClickListener {
             itemlist.removeAt(position)
             notifyDataSetChanged()
         }
@@ -43,6 +43,7 @@ class mv_Adapter(val itemlist: ArrayList<movie>) :
 
         val movie_name = view.findViewById<TextView>(R.id.tv_name)
         val movie_actor = view.findViewById<TextView>(R.id.tv_actor)
+        val delete = view.findViewById<TextView>(R.id.deletion)
 
     }
 }
