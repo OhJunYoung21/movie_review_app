@@ -8,12 +8,18 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 
 
 class mv_Adapter(val itemlist: ArrayList<movie>) :
     RecyclerView.Adapter<mv_Adapter.ViewHolder>() {
+
+
+    interface OnItemClickListener {
+        fun OnClickItem(view: View, position: Int)
+    }
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -35,7 +41,10 @@ class mv_Adapter(val itemlist: ArrayList<movie>) :
             notifyDataSetChanged()
         }
 
-
+        holder.movie_review.setOnClickListener {
+            val intent = Intent(holder.movie_review?.context,ReviewActivity::class.java)
+            ContextCompat.startActivity(holder.movie_review.context, intent,null)
+        }
 
     }
 

@@ -26,12 +26,12 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        list.add(movie("1", "Matrix", "keeanu","review"))
-        list.add(movie("2", "Ironman", "Robert","review"))
-        list.add(movie("3", "Ironman", "Robert","review"))
-        list.add(movie("4", "Ironman", "Robert","review"))
-        list.add(movie("5", "Ironman", "Robert","review"))
-        list.add(movie("6", "Ironman", "Robert","review"))
+        list.add(movie("1", "Matrix", "keeanu", "review"))
+        list.add(movie("2", "Ironman", "Robert", "review"))
+        list.add(movie("3", "Ironman", "Robert", "review"))
+        list.add(movie("4", "Ironman", "Robert", "review"))
+        list.add(movie("5", "Ironman", "Robert", "review"))
+        list.add(movie("6", "Ironman", "Robert", "review"))
 
 
 
