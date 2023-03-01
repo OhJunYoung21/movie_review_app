@@ -1,16 +1,10 @@
 package com.example.movie_review_app
 
 
-import android.annotation.SuppressLint
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.ListAdapter
-import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.LayoutManager
-import androidx.recyclerview.widget.RecyclerView.Recycler
 import com.example.movie_review_app.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -26,12 +20,12 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        list.add(movie("1", "Matrix", "keeanu", "review"))
-        list.add(movie("2", "Ironman", "Robert", "review"))
-        list.add(movie("3", "Ironman", "Robert", "review"))
-        list.add(movie("4", "Ironman", "Robert", "review"))
-        list.add(movie("5", "Ironman", "Robert", "review"))
-        list.add(movie("6", "Ironman", "Robert", "review"))
+        list.add(movie("1", "매트릭스", "keeanu", "review"))
+        list.add(movie("2", "아이언맨", "Robert", "review"))
+        list.add(movie("3", "수리남", "hwang", "review"))
+        list.add(movie("4", "종이의 집", "tokyo", "review"))
+        list.add(movie("5", "더 글로리", "song", "review"))
+        list.add(movie("6", "카지노", "choi", "review"))
 
 
 

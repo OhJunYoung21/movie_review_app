@@ -8,15 +8,16 @@
     tools:context=".MainActivity">
 
 
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvlist"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:listitem="@layout/movie"/>
+        tools:listitem="@layout/movie"
+        android:focusable="true" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
