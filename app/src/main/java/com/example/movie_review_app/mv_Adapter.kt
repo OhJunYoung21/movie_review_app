@@ -38,7 +38,8 @@ class mv_Adapter(val itemlist: ArrayList<movie>) :
         holder.movie_review.setOnClickListener {
 
             val intent = Intent(holder.movie_review?.context, ReviewActivity::class.java)
-            intent.putExtra("배우", itemlist[position].actor)
+            intent.putExtra("배우", itemlist[position].actor)   //movie class 내의 actor property를 할당해준다.
+            intent.putExtra("제목", itemlist[position].name)      //movie class 내의 name property를 할당해준다.
             ContextCompat.startActivity(holder.movie_review.context, intent, null)
 
 

@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.movie_review_app.databinding.ActivityMainBinding
+import org.json.JSONObject
+import java.net.URL
 
 class MainActivity : AppCompatActivity() {
 
@@ -13,6 +15,11 @@ class MainActivity : AppCompatActivity() {
 
     var list = arrayListOf<movie>()
     val Movie_Adapter = mv_Adapter(list)
+
+
+    val url = "https://api.themoviedb.org/3/movie/latest?api_key=3e32bbc8b184991be71b7fdfb0ef2c92"
+
+    val response = URL(url).readText()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,7 +40,31 @@ class MainActivity : AppCompatActivity() {
         binding.rvlist.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 
+
+        val movieList = mutableListOf<ApiMovie>()
+
+        val jsonResponse = JSONObject(response)
+        val movieData = jsonResponse.getJSONObject("results")
+        val movieArray = movieData.getJSONArray("results")
+
+        for (i in 0 until movieArray.length()) {
+            val movieObject = movieArray.getJSONObject(i)
+            val movie = ApiMovie(
+                id = movieObject.getInt("id"),
+                title = movieObject.getString("title"),
+                releaseDate = movieObject.getString("release_date"),
+                overview = movieObject.getString("overview"),
+                posterUrl = "https://image.tmdb.org/t/p/w500" + movieObject.getString("poster_path"),
+                voteAverage = movieObject.getDouble("vote_average")
+            )
+            movieList.add(movie)
+        }
+
+
+
     }
+
+
 
 
 }
