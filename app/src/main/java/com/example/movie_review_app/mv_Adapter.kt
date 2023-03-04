@@ -11,7 +11,7 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 
 
-class mv_Adapter(val itemlist: ArrayList<movie>) :
+class mv_Adapter(val itemlist: ArrayList<Movie>) :
     RecyclerView.Adapter<mv_Adapter.ViewHolder>() {
 
 
@@ -24,7 +24,7 @@ class mv_Adapter(val itemlist: ArrayList<movie>) :
     @SuppressLint("NotifyDataSetChanged")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.movie_order.text =
-            itemlist[position].number    //itemlist[position]에는 movie class 객체가 들어갈 것이다.
+            itemlist[position].order    //itemlist[position]에는 movie class 객체가 들어갈 것이다.
         holder.movie_name.text = itemlist[position].name
         holder.movie_actor.text = itemlist[position].actor
 
@@ -35,15 +35,15 @@ class mv_Adapter(val itemlist: ArrayList<movie>) :
             notifyDataSetChanged()
         }
 
+
         holder.movie_review.setOnClickListener {
 
             val intent = Intent(holder.movie_review?.context, ReviewActivity::class.java)
-            intent.putExtra("배우", itemlist[position].actor)   //movie class 내의 actor property를 할당해준다.
-            intent.putExtra("제목", itemlist[position].name)      //movie class 내의 name property를 할당해준다.
+            intent.putExtra("제목", itemlist[position].name)
+            intent.putExtra("배우", itemlist[position].actor)
             ContextCompat.startActivity(holder.movie_review.context, intent, null)
-
-
         }
+
     }
 
 
