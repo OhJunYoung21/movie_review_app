@@ -26,10 +26,7 @@ class mv_Adapter(val itemlist: ArrayList<Movie>) :
     @SuppressLint("NotifyDataSetChanged", "DiscouragedApi")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-        val ct = holder.photo.context
-
-        val id = ct.resources.getIdentifier(holder.photo.toString(), "drawable", ct.packageName)
-        holder.photo.setImageResource(id)
+        holder.photo.setImageResource(itemlist[position].profile)
 
         holder.movie_name.text = itemlist[position].name
         holder.movie_actor.text = itemlist[position].actor

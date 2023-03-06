@@ -22,9 +22,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
-        list.add(Movie("1", "더 글로리", "song", "glory"))
-        list.add(Movie("2", "수리남", "hwang", "surinam"))
-        list.add(Movie("3", "matrix", "kianu", "matrix"))
+        list.add(Movie(R.drawable.ironman, "아이언맨", "robert"))
+        list.add(Movie(R.drawable.surinam, "수리남", "hwang"))
+        list.add(Movie(R.drawable.matrix, "matrix", "kianu"))
+        list.add(Movie(R.drawable.glory, "글로리", "song"))
+
 
 
         binding.rvlist.adapter = Movie_Adapter
